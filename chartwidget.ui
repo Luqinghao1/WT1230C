@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ChartWidget</class>
+ <widget class="QWidget" name="ChartWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChartWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 全局字体黑色 */
+QWidget {
+        color: black;
+        font-family: &quot;Microsoft YaHei&quot;;
+}
+
+/* 针对弹出窗口和消息框的样式增强 */
+QMessageBox {
+        background-color: white;
+        color: black;
+}
+QMessageBox QLabel {
+        color: black;
+}
+QDialog {
+        background-color: white;
+        color: black;
+}
+
+/* 按钮样式 */
+QPushButton {
+        color: #333333;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        padding: 4px 12px;
+        min-width: 60px;
+}
+QPushButton:hover {
+        background-color: #f5f5f5;
+        border-color: #0078d7;
+        color: #0078d7;
+}
+QPushButton:pressed {
+        background-color: #e6e6e6;
+        border-color: #005a9e;
+}
+
+/* 下拉框、输入框等 */
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+        color: black;
+        background-color: white;
+        border: 1px solid #a0a0a0;
+        selection-background-color: #0078d7;
+        selection-color: white;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="MouseZoom" name="chartArea" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_Toolbar">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_Toolbar {
+        background-color: white;
+        border: none; /* 移除顶部边框，实现无缝连接 */
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExportImg">
+        <property name="text">
+         <string>导出图片</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnChartSettings">
+        <property name="text">
+         <string>图表设置</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnExportData">
+        <property name="text">
+         <string>导出数据</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnResetView">
+        <property name="text">
+         <string>重置视图</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MouseZoom</class>
+   <extends>QWidget</extends>
+   <header>mousezoom.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

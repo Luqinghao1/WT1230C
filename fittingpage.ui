@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FittingPage</class>
+ <widget class="QWidget" name="FittingPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fitting Page Manager</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 全局字体与颜色：强制黑色 */
+QWidget {
+    color: #000000;
+    font-family: &quot;Microsoft YaHei&quot;, &quot;Segoe UI&quot;, sans-serif;
+    font-size: 9pt;
+}
+
+/* 工具栏背景 */
+QFrame#frameToolbar {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* 现代化按钮样式 */
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    padding: 5px 15px;
+    color: #333333;
+    font-weight: normal;
+}
+
+QPushButton:hover {
+    background-color: #f0f0f0;
+    border-color: #a0a0a0;
+    color: #000000;
+}
+
+QPushButton:pressed {
+    background-color: #e0e0e0;
+    border-color: #808080;
+    padding-top: 6px;
+    padding-left: 16px;
+}
+
+QPushButton:disabled {
+    background-color: #f5f5f5;
+    color: #a0a0a0;
+    border-color: #e0e0e0;
+}
+
+/* Tab页签样式优化 */
+QTabWidget::pane {
+    border: 1px solid #d0d0d0;
+    background: #ffffff;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background: #e8e8e8;
+    border: 1px solid #d0d0d0;
+    padding: 6px 15px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #555555;
+    min-width: 80px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+QTabBar::tab:selected {
+    border-bottom-color: #ffffff;
+    font-weight: bold;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameToolbar">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>45</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnNewAnalysis">
+        <property name="text">
+         <string>+ 新建分析</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRenameAnalysis">
+        <property name="text">
+         <string>重命名</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnDeleteAnalysis">
+        <property name="text">
+         <string>删除当前页</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

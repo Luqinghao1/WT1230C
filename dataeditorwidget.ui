@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DataEditorWidget</class>
+ <widget class="QWidget" name="DataEditorWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>数据编辑器</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    /* 全局设置：浅色背景，黑色字体 */
+    QWidget { background-color: #f5f6fa; font-family: &quot;Microsoft YaHei&quot;, Arial; color: #000000; }
+
+    /* 按钮设置 */
+    QPushButton {
+        background-color: #4a90e2;
+        color: white;
+        border-radius: 4px;
+        padding: 6px 12px;
+        border: none;
+        font-weight: bold;
+    }
+    QPushButton:hover { background-color: #357abd; }
+    QPushButton:disabled { background-color: #cccccc; color: #666666; }
+
+    /* 输入框设置 */
+    QLineEdit {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 4px;
+        color: black;
+    }
+
+    /* 表格设置 */
+    QTableView {
+        background-color: white;
+        border: 1px solid #ddd;
+        gridline-color: #eee;
+        color: black;
+        selection-background-color: #e0f0ff;
+        selection-color: black;
+    }
+    QHeaderView::section {
+        background-color: #f8f9fa;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        padding: 4px;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    /* 标签设置 */
+    QLabel { color: #000000; background: transparent; }
+
+    /* 分隔线设置 */
+    Line { background-color: #ccc; }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+     <item>
+      <widget class="QPushButton" name="btnOpenFile">
+       <property name="text">
+        <string>📁 打开文件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave">
+       <property name="text">
+        <string>💾 保存</string>
+       </property>
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnDefineColumns">
+       <property name="text">
+        <string>🏷️ 定义列</string>
+       </property>
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnTimeConvert">
+       <property name="text">
+        <string>⏰ 时间转换</string>
+       </property>
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnPressureDropCalc">
+       <property name="text">
+        <string>📉 压降计算</string>
+       </property>
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="searchLineEdit">
+       <property name="placeholderText">
+        <string>🔍 搜索...</string>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableView" name="dataTableView">
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectionBehavior::SelectItems</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="bottomLayout">
+     <item>
+      <widget class="QLabel" name="filePathLabel">
+       <property name="text">
+        <string>当前文件: 无</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="statusLabel">
+       <property name="text">
+        <string>就绪</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
